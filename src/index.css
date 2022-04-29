@@ -1,13 +1,52 @@
-body {
+ul {
+  list-style-type: none;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+.slider-opt04__layout01 .media {
+  height: 380px !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.col-third {
+  width: 33%;
+}
+
+.col-fourth {
+  width: 25%;
+}
+
+ul.products-list {
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.banner-contain {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px !important;
+}
+
+a.link-to-product img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.nav-menu {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px 0;
+}
+
+.nav-menu .menu-item {
+  margin-right: 15px;
+}
+
+.nav-menu .menu-item:hover a {
+  color: orange;
+}
+
+.nav-menu .menu-item a {
+  color: #222222;
 }

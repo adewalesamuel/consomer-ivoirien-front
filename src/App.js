@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Components } from './components';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import './assets2/css/bootstrap.min.css';
+import './assets2/css/animate.min.css';
+import './assets2/css/font-awesome.min.css';
+import './assets2/css/nice-select.css';
+import './assets2/css/slick.min.css';
+import './assets2/css/slick.min.css';
+import './assets2/css/style.css';
+import './assets2/css/main-color04.css';
+
+import './index.css'
+import './index-responsive.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='*' element={<Components.MainLayout />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

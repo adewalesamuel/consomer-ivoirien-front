@@ -1,0 +1,3 @@
+@media screen and (max-width: 520px) {
+    .col-third, .col-fourth { width: 50%;}  
+}
