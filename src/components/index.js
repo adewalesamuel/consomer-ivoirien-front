@@ -8,7 +8,7 @@ import { PubliciteForm } from './forms/PubliciteForm';
 import { SouscriptionForm } from './forms/SouscriptionForm';
 import { SouscriptionUtilisateurForm } from './forms/SouscriptionUtilisateurForm';
 
-import { Preloader } from '../Preloader';
+import { Preloader } from './Preloader';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { MainLayout } from './layouts/MainLayout';
@@ -19,13 +19,15 @@ import { NavBar } from './NavBar';
 import { HeroSection } from './HeroSection';
 import { SearchBar } from './SearchBar';
 import { Menu } from './Menu';
+import { TitleSection } from './TitleSection';
 import { Slide } from './Slide';
 import { BrandList } from './BrandList';
 
 import { Table } from './Table';
 import { ProductItem } from './ProductItem';
-import { ProducList } from './ProductList';
+import { ProductList } from './ProductList';
 import { ServiceBox } from './ServiceBox';
+import { AccountTab } from './AccountTab';
 
 
 export const Components = {
@@ -49,9 +51,11 @@ export const Components = {
 	Slide,
 	SearchBar,
 	ProductItem,
-	ProducList,
+	ProductList,
 	ServiceBox,
 	BrandList,
-	NavBar
+	NavBar,
+	TitleSection,
+	AccountTab
 
 }

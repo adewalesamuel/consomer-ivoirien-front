@@ -6,6 +6,7 @@ export const useUtilisateur = () => {
 	const [nom_prenoms, setNom_prenoms] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [cpassword, setCpassword] = useState("");
 	const [adresse, setAdresse] = useState('');
 	const [ville, setVille] = useState('');
 	const [pays, setPays] = useState('');
@@ -78,6 +79,7 @@ export const useUtilisateur = () => {
         setNom_prenoms('');
 		setEmail('');
 		setPassword('');
+		setCpassword('');
 		setAdresse('');
 		setVille('');
 		setPays('');
@@ -92,6 +94,7 @@ export const useUtilisateur = () => {
         nom_prenoms,
 		email,
 		password,
+		cpassword,
 		adresse,
 		ville,
 		pays,
@@ -104,6 +107,7 @@ export const useUtilisateur = () => {
         setNom_prenoms,
 		setEmail,
 		setPassword,
+		setCpassword,
 		setAdresse,
 		setVille,
 		setPays,

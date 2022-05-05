@@ -1,14 +1,7 @@
-import { Components } from ".";
-
 export function HeroSection(props) {
     return (
-        <div className="container">
-                <div className="row">
-                    <Components.SearchBar />
-                    <Components.Menu />
-                    <Components.NavBar categories={props.categories ?? []}/>
-                    <Components.Slide />
-                </div>
-            </div>
+        <div className="hero-section hero-background">
+            <h1 className="page-title">{props.title ?? "Titre de la page"}</h1>
+        </div>
     )
 }

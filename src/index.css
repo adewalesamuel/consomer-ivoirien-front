@@ -3,6 +3,10 @@ ul {
   margin: 0;
   padding: 0;
 }
+.block-title {
+  border-radius: 0 !important;
+}
+
 .slider-opt04__layout01 .media {
   height: 380px !important;
 }
@@ -22,10 +26,7 @@ ul.products-list {
 }
 
 .banner-contain {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 300px !important;
+  height: auto !important;
 }
 
 a.link-to-product img {
@@ -49,4 +50,8 @@ a.link-to-product img {
 
 .nav-menu .menu-item a {
   color: #222222;
+}
+
+.none-box-shadow .vertical-category-block > .wrap-menu {
+  display: none;
 }

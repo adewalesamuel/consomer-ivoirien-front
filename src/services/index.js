@@ -8,6 +8,7 @@ import { PubliciteService } from './PubliciteService';
 import { SouscriptionService } from './SouscriptionService';
 import { SouscriptionUtilisateurService } from './SouscriptionUtilisateurService';
 import { HomeService } from './HomeService';
+import { AuthService } from './AuthService';
 
 export const Services = {
     UtilisateurService,
@@ -20,5 +21,6 @@ export const Services = {
 	SouscriptionService,
 	SouscriptionUtilisateurService,
 	HomeService,
+	AuthService,
 	
 }

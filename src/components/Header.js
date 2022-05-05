@@ -1,7 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
-
-import { Utils } from "../utils";
+// import { Link, useNavigate } from "react-router-dom";
 // import { Services } from "../services";
+
+import { Link } from "react-router-dom";
 
 export function Header(props) {
     const abortController = new AbortController();
@@ -29,21 +29,11 @@ export function Header(props) {
                             <li><a href="#"><i className="fa fa-pinterest" aria-hidden="true"></i></a></li>
                         </ul>
                         <ul className="horizontal-menu">
-                            <li className="horz-menu-item currency">
-                                <select name="currency">
-                                    <option value="eur">€ EUR (Euro)</option>
-                                    <option value="usd">$ USD (Dollar)</option>
-                                </select>
+                            <li>
+                                <Link to="/authentification" className="login-link">
+                                    <i className="biolife-icon icon-login"></i>Connexion
+                                </Link>
                             </li>
-                            <li className="horz-menu-item lang">
-                                <select name="language">
-                                    <option value="fr">French (EUR)</option>
-                                    <option value="en">English (USD)</option>
-                                    <option value="ger">Germany (GBP)</option>
-                                    <option value="jp">Japan (JPY)</option>
-                                </select>
-                            </li>
-                            <li><a href="login.html" className="login-link"><i className="biolife-icon icon-login"></i>Connexion</a></li>
                         </ul>
                     </div>
                 </div>

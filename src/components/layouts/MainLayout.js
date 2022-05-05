@@ -24,11 +24,19 @@ export function MainLayout(props) {
         <>
              {/* <Components.Preloader /> */}
             <Components.Header />
+            <div className='container'>
+                <div className='row'>
+                    <Components.SearchBar />
+                    <Components.Menu />
+                    <Components.NavBar categories={categories}/>
+                </div>
+            </div>
             <div className="page-contain">
                 <div id="main-content" className="main-content">
-                    <Components.HeroSection categories={categories}/>
                     <Routes>
                         <Route exact path='' element={<Views.AccueilView categories={categories}/>} />
+                        <Route exact path='authentification' element={<Views.AuthentificationView categories={categories}/>} />
+                        <Route exact path='mon-compte' element={<Views.MonCompteView />} />
                     </Routes>
                 </div>
             </div>

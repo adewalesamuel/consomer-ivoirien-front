@@ -1,6 +1,6 @@
 import { Components } from "."
 
-export function ProducList(props) {
+export function ProductList(props) {
     return (
         <div className="advance-product-box">
             <ul className="products-list nav-top-right nav-main-color nav-none-on-mobile eq-height-contain">
