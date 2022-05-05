@@ -9,6 +9,7 @@ import { SouscriptionService } from './SouscriptionService';
 import { SouscriptionUtilisateurService } from './SouscriptionUtilisateurService';
 import { HomeService } from './HomeService';
 import { AuthService } from './AuthService';
+import { FileService } from './FileService';
 
 export const Services = {
     UtilisateurService,
@@ -22,5 +23,6 @@ export const Services = {
 	SouscriptionUtilisateurService,
 	HomeService,
 	AuthService,
+	FileService
 	
 }

@@ -4,7 +4,7 @@ const  ENPOINTS = {
     File: 'upload',
 };
 
-const store = (signal, payload) => {
+const store = (payload, signal) => {
     return Api.postFormData(ENPOINTS.File, payload, signal)
 }
 

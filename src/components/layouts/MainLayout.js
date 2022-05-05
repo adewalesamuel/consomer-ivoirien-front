@@ -36,7 +36,7 @@ export function MainLayout(props) {
                     <Routes>
                         <Route exact path='' element={<Views.AccueilView categories={categories}/>} />
                         <Route exact path='authentification' element={<Views.AuthentificationView categories={categories}/>} />
-                        <Route exact path='mon-compte' element={<Views.MonCompteView />} />
+                        <Route path='mon-compte/*' element={<Views.MonCompteView categories={categories}/>} />
                     </Routes>
                 </div>
             </div>
