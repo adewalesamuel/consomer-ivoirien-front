@@ -20,7 +20,7 @@ export function AjouterProduitView(props) {
           .then(() => {
             setIsDisabled(false);
             alert("Félicitation! Votre produit à bien été ajouté");
-            navigate('produits');
+            navigate('mon-compte/produits');
           })
           .catch(err => setIsDisabled(false));
         }

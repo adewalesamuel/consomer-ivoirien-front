@@ -15,7 +15,7 @@ export function MainLayout(props) {
     const [categories, setCategories] = useState([])
 
     
-    useEffect(() => {
+    useEffect(() => {        
         Services.HomeService.getAll(abortController.signal)
         .then(response => setCategories(response.categories));
     }, []);

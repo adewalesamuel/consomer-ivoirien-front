@@ -1,7 +1,17 @@
+import { useEffect } from "react";
 import { Components } from "../components";
 import { Api } from "../services/Api";
+import { Utils } from "../utils";
 
 export function AccueilView(props) {
+    useEffect(() => {
+      Utils.DomManager.showElement('wrap-menu');
+    
+      return () => {
+        Utils.DomManager.hideElement('wrap-menu');
+      }
+    }, [])
+    
     return (
         <>  
             <Components.Slide />

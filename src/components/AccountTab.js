@@ -1,7 +1,7 @@
 export function AccountTab(props) {
     return (
         <div className="card text-center contain-product__right-info-layout" 
-        onClick={props.handleClick ?? null} style={{cursor: 'pointer'}}>
+        onClick={props.handleClick ?? null} role='button'>
             <div className="card-body">
                 <span className={`fa ${props.icon ?? ''}`} style={{fontSize: '36px'}}></span>
                 <h4 className="card-text">{props.title ?? ""}</h4>

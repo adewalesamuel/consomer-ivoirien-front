@@ -26,9 +26,10 @@ export function AuthentificationView(props) {
         setIsDisabled(true);
         Services.AuthService.login(JSON.stringify(payload), abortController.signal)
         .then(response => {
-            navigate('/mon-compte');
             Utils.Auth.setSessionToken(response.utilisateur.api_token);
             Utils.Auth.setUser(response.utilisateur);
+            
+            window.location.assign('/mon-compte')
         })
         .catch(err => {
             console.log(err);

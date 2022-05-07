@@ -85,7 +85,7 @@ export function PostForm(props) {
                     </div>
                 </div>
                 <div className='col-12 text-right'>
-                    <button disabled={props.isDisabled ?? false} type='button' className='btn btn-primary' 
+                    <button disabled={props.isDisabled ?? false} type='button' className='btn btn-submit btn-bold' 
                     onClick={props.handleFormSubmit}>
                         <span>Enregistrer</span>
                     </button>

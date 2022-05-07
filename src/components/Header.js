@@ -2,6 +2,7 @@
 // import { Services } from "../services";
 
 import { Link } from "react-router-dom";
+import { Utils } from "../utils";
 
 export function Header(props) {
     const abortController = new AbortController();
@@ -30,9 +31,16 @@ export function Header(props) {
                         </ul>
                         <ul className="horizontal-menu">
                             <li>
-                                <Link to="/authentification" className="login-link">
-                                    <i className="biolife-icon icon-login"></i>Connexion
-                                </Link>
+                                {!Utils.Auth.isLoggedIn() ? 
+                                    <Link to="/authentification" className="login-link">
+                                        <i className="biolife-icon icon-login"></i>Connexion
+                                    </Link>
+                                :
+                                <Link to="/mon-compte" className="login-link">
+                                    <i className="biolife-icon icon-login"></i>Mon compte
+                                </Link> 
+                                }
+                                
                             </li>
                         </ul>
                     </div>
@@ -47,7 +55,7 @@ export function Header(props) {
                         <div className="col-lg-6 col-md-7 hidden-sm hidden-xs">
                             <div className="primary-menu">
                                 <ul className="menu biolife-menu clone-main-menu clone-primary-menu" id="primary-menu" data-menuname="main menu">
-                                    <li className="menu-item"><a href="#">Accueil</a></li>
+                                    <li className="menu-item"><Link to="/">Accueil</Link></li>
                                     <li className="menu-item">
                                         <a href="#" className="menu-name" data-title="Product">Articles</a>
                                     </li>
