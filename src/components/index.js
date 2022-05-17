@@ -10,6 +10,7 @@ import { SouscriptionUtilisateurForm } from './forms/SouscriptionUtilisateurForm
 
 import { Preloader } from './Preloader';
 import { Header } from './Header';
+import { HeaderTop } from './HeaderTop';
 import { Footer } from './Footer';
 import { MainLayout } from './layouts/MainLayout';
 // import { AuthLayout } from './layouts/AuthLayout';
@@ -29,6 +30,8 @@ import { ProductList } from './ProductList';
 import { ServiceBox } from './ServiceBox';
 import { AccountTab } from './AccountTab';
 
+import { Loader } from './Loader';
+
 
 export const Components = {
     UtilisateurForm,
@@ -41,6 +44,7 @@ export const Components = {
 	SouscriptionForm,
 	SouscriptionUtilisateurForm,
 	Header,
+	HeaderTop,
 	Footer,
 	MainLayout,
 	MainMenu,
@@ -56,6 +60,7 @@ export const Components = {
 	BrandList,
 	NavBar,
 	TitleSection,
-	AccountTab
+	AccountTab,
+	Loader
 
 }

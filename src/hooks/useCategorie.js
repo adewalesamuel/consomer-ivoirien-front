@@ -8,7 +8,6 @@ export const useCategorie = () => {
 	const [description, setDescription] = useState('');
 	const [img_url, setImg_url] = useState('');
 	
-
     const [errors, setErrors] = useState([]);
     const [isDisabled, setIsDisabled] = useState(false);
 
@@ -19,7 +18,6 @@ export const useCategorie = () => {
             setIsDisabled(false);
         });
     }
-
     const createCategorie = signal => {
         const payload = {
             nom,

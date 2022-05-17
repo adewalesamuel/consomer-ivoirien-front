@@ -26,9 +26,11 @@ export function AjouterProduitView(props) {
         }
       const handleFileChange = event => {
         event.preventDefault();
+
         const formData = new FormData();
+
         formData.append('img', event.target.files[0]);
-    
+
         setIsDisabled(true);
         Services.FileService.store(formData, abortController.signal)
         .then(response => {
@@ -36,7 +38,6 @@ export function AjouterProduitView(props) {
     
           img_urls.push(response.img_url);
           usePost.setImg_urls(JSON.stringify(img_urls));
-    
           setIsDisabled(false);
         })
         .catch(err => setIsDisabled(false));

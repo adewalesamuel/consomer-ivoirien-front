@@ -10,7 +10,6 @@ export const useAdministrateur = () => {
 	const [img_url, setImg_url] = useState('');
 	const [img, setImg] = useState('');
 	
-
     const [errors, setErrors] = useState([]);
     const [isDisabled, setIsDisabled] = useState(false);
 

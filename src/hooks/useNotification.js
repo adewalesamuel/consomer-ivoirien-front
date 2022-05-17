@@ -7,7 +7,6 @@ export const useNotification = () => {
 	const [contenu, setContenu] = useState('');
 	const [utilisateur_id, setUtilisateur_id] = useState('');
 	
-
     const [errors, setErrors] = useState([]);
     const [isDisabled, setIsDisabled] = useState(false);
 

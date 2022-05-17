@@ -2,6 +2,7 @@
 // import { Services } from "../services";
 
 import { Link } from "react-router-dom";
+import { Components } from ".";
 import { Utils } from "../utils";
 
 export function Header(props) {
@@ -15,37 +16,7 @@ export function Header(props) {
     }
     return (
         <header id="header" className="header-area style-01 layout-04">
-            <div className="header-top bg-main hidden-xs">
-                <div className="container">
-                    <div className="top-bar left">
-                        <ul className="horizontal-menu">
-                            <li><a href="#"><i className="fa fa-envelope" aria-hidden="true"></i>info@consomerivoirien.com</a></li>
-                            <li><a href="#">Le meilleur du sie de E-commerce</a></li>
-                        </ul>
-                    </div>
-                    <div className="top-bar right">
-                        <ul className="social-list">
-                            <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i className="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                        </ul>
-                        <ul className="horizontal-menu">
-                            <li>
-                                {!Utils.Auth.isLoggedIn() ? 
-                                    <Link to="/authentification" className="login-link">
-                                        <i className="biolife-icon icon-login"></i>Connexion
-                                    </Link>
-                                :
-                                <Link to="/mon-compte" className="login-link">
-                                    <i className="biolife-icon icon-login"></i>Mon compte
-                                </Link> 
-                                }
-                                
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <Components.HeaderTop />
             <div className="header-middle biolife-sticky-object ">
                 <div className="container">
                     <div className="row">

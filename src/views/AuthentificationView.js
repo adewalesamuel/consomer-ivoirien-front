@@ -29,7 +29,7 @@ export function AuthentificationView(props) {
             Utils.Auth.setSessionToken(response.utilisateur.api_token);
             Utils.Auth.setUser(response.utilisateur);
             
-            window.location.assign('/mon-compte')
+            window.location.assign('/mon-compte');
         })
         .catch(err => {
             console.log(err);
@@ -53,7 +53,8 @@ export function AuthentificationView(props) {
         };
         
         setIsDisabled(true);
-        Services.UtilisateurService.create(JSON.stringify(payload), abortController.signal)
+        Services.UtilisateurService.create(JSON.stringify(payload), 
+        abortController.signal)
         .then(response => {
             alert("Vous êtes inscris avec success! Veuillez vous connecter");
             useUtilisateur.emptyUtilisateur();

@@ -17,9 +17,7 @@ export function AccueilView(props) {
             <Components.Slide />
             <div className="container z-index-20 xs-margin-top-80px sm-margin-top-0">
                 {props.categories.length === 0 ?
-                    <div style={{textAlign:'center', margin:'30px auto', padding: '100px 0', display:'block'}}>
-                        Chargement en cours...
-                    </div>
+                   <Components.Loader />
                 : null}
                 {props.categories.map((categorie, index) => {
                 return (

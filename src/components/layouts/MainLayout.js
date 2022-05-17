@@ -22,7 +22,6 @@ export function MainLayout(props) {
 
     return (
         <>
-             {/* <Components.Preloader /> */}
             <Components.Header />
             <div className='container'>
                 <div className='row'>
@@ -35,6 +34,7 @@ export function MainLayout(props) {
                 <div id="main-content" className="main-content">
                     <Routes>
                         <Route exact path='' element={<Views.AccueilView categories={categories}/>} />
+                        <Route exact path='produits/:id' element={<Views.ProduitDetailsView />} />
                         <Route exact path='authentification' element={<Views.AuthentificationView categories={categories}/>} />
                         <Route path='mon-compte/*' element={<Views.MonCompteView categories={categories}/>} />
                     </Routes>
