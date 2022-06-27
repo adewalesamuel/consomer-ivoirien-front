@@ -1,4 +1,4 @@
-import { Components } from ".";
+import slideBg from '../assets2/images/slide-bg.jpg';
 
 export function Slide(props) {
     return (
@@ -9,7 +9,7 @@ export function Slide(props) {
                         <ul className="biolife-carousel">
                             <li>
                                 <div className="slide-contain slider-opt04__layout01">
-                                    <div className="media"></div>
+                                    <div className="media" style={{backgroundImage: `url(${slideBg})`}}></div>
                                 </div>
                             </li>
                         </ul>

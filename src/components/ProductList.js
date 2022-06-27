@@ -3,11 +3,13 @@ import { Components } from "."
 export function ProductList(props) {
     return (
         <div className="advance-product-box">
-            <ul className="products-list nav-top-right nav-main-color nav-none-on-mobile eq-height-contain">
+            <ul className="products-list nav-top-right nav-main-color 
+            nav-none-on-mobile eq-height-contain">
                 {props.products.map((product, index) => {
-                    return <Components.ProductItem product={product} key={index} colNumber={props.colNumber ?? '3'}/>
+                    return <Components.ProductItem product={product} 
+                    key={index} colNumber={props.colNumber ?? '3'}/>
                 })}
             </ul>
         </div>
     )
-}
+}   

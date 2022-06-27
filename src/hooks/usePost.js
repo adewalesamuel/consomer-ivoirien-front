@@ -13,9 +13,10 @@ export const usePost = () => {
 	const [categorie_id, setCategorie_id] = useState('');
 	const [utilisateur_id, setUtilisateur_id] = useState(Utils.Auth.getUser() ? Utils.Auth.getUser().id : '');
 	const [promotion_end_date, setPromotion_end_date] = useState('');
+	const [categorie, setCategorie] = useState('');
+	const [utilisateur, setUtilisateur] = useState('')
 
 	const villes = ['Abdijan', 'Bouake', 'Yamoussoukro'];
-	
 
     const [errors, setErrors] = useState([]);
     const [isDisabled, setIsDisabled] = useState(false);
@@ -81,6 +82,8 @@ export const usePost = () => {
 		setCategorie_id(post.categorie_id ?? '');
 		setUtilisateur_id(post.utilisateur_id ?? '');
 		setPromotion_end_date(post.promotion_end_date ?? '');
+		setCategorie(post.categorie ?? '');
+		setUtilisateur(post.utilisateur ?? '');
 
 		setVille(JSON.parse(post.attributs) ? JSON.parse(post.attributs).ville : '');
 		setAttributs(post.attributs ?? '');
@@ -95,7 +98,8 @@ export const usePost = () => {
 		setCategorie_id('');
 		setUtilisateur_id('');
 		setPromotion_end_date('');
-		
+		setCategorie('');
+		setUtilisateur('');
     }
 
     return {
@@ -110,6 +114,8 @@ export const usePost = () => {
 		utilisateur_id,
 		promotion_end_date,
 		villes,
+		categorie,
+		utilisateur,
 		
         errors,
         isDisabled,

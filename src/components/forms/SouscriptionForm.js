@@ -25,11 +25,10 @@ export function SouscriptionForm(props) {
                 </div>
 				<div className='col-12'>
                     <div className='form-group'>
-                        <label htmlFor='img_urls'>Img_urls</label>
-                        <input className='form-control' type='text' id='img_urls' name='img_urls' 
-                        placeholder='Img_urls' value={props.useSouscription.img_urls ?? ''}
-                        disabled={props.isDisabled} 
-                        onChange={ e => props.useSouscription.setImg_urls(e.target.value) ?? null} required/>
+                        <label htmlFor='img'>Image</label>
+                        <input className='form-control' type='file' id='img' name='img' 
+                        placeholder='Image' disabled={props.isDisabled} 
+                        onChange={ e => props.useSouscription.setImg(e.target.files[0]) ?? null} required/>
                     </div>
                 </div>
 				<div className='col-12'>

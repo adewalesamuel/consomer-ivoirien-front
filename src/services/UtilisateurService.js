@@ -2,10 +2,15 @@ import { Api } from './Api';
 
 const  ENPOINTS = {
     Utilisateur: 'utilisateurs',
+    Post: 'posts',
 };
 
 const getAll = signal => {
     return Api.get(ENPOINTS.Utilisateur, signal)
+}
+
+const getPosts = (id, signal) => {
+    return Api.get(`${ENPOINTS.Utilisateur}/${id}/posts`, signal);
 }
 
 const getById = (id, signal) => {
@@ -19,8 +24,17 @@ const create = (payload, signal) => {
 const update = (id, payload, signal) => {
     return Api.put(`${ENPOINTS.Utilisateur}/${id}`, payload, signal)
 }
+
+const updatePost = (id, payload, signal) => {
+    return Api.put(`utilisateur/${ENPOINTS.Post}/${id}`, payload, signal)
+}
+
 const destroy = (id, signal) => {
     return Api.erase(`${ENPOINTS.Utilisateur}/${id}`, signal)
+}
+
+const destroyPost = (id, signal) => {
+    return Api.erase(`utilisateur/${ENPOINTS.Post}/${id}`, signal)
 }
 
 export const UtilisateurService = {
@@ -28,5 +42,8 @@ export const UtilisateurService = {
     getById,
     create,
     update,
-    destroy
+    destroy,
+    getPosts,
+    updatePost,
+    destroyPost
 }

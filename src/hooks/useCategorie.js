@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Services } from '../services';
 
-export const useCategorie = () => {
+export const useCategorie = (l) => {
     const [id, setId] = useState('');
 	const [nom, setNom] = useState('');
 	const [slug, setSlug] = useState('');
 	const [description, setDescription] = useState('');
+    const [parent_category_id, setParent_category_id] = useState('');
 	const [img_url, setImg_url] = useState('');
+
+    const [categories, setCategories] = useState([]);
 	
     const [errors, setErrors] = useState([]);
     const [isDisabled, setIsDisabled] = useState(false);
@@ -24,6 +27,7 @@ export const useCategorie = () => {
 		slug,
 		description,
 		img_url,
+        parent_category_id
 		
         };
 
@@ -35,6 +39,7 @@ export const useCategorie = () => {
 		slug,
 		description,
 		img_url,
+        parent_category_id
 		
         };
 
@@ -49,6 +54,7 @@ export const useCategorie = () => {
 		setSlug(categorie.slug ?? '');
 		setDescription(categorie.description ?? '');
 		setImg_url(categorie.img_url ?? '');
+        setParent_category_id(categorie.parent_category_id ?? '');
 		
     }
     const emptyCategorie = () => {
@@ -57,8 +63,24 @@ export const useCategorie = () => {
 		setSlug('');
 		setDescription('');
 		setImg_url('');
+        setParent_category_id('');
 		
     }
+
+    useEffect(() => {        
+        const abortController = new AbortController();
+
+        Services.CategorieService.getAll(abortController.signal)
+        .then(response => {
+            setCategories(response.categories);
+        })
+        .catch(err => console.log(err));
+    
+      return () => {
+        
+      }
+    }, [])
+
 
     return {
         id,
@@ -66,6 +88,7 @@ export const useCategorie = () => {
 		slug,
 		description,
 		img_url,
+        parent_category_id,
 		
         errors,
         isDisabled,
@@ -73,6 +96,7 @@ export const useCategorie = () => {
 		setSlug,
 		setDescription,
 		setImg_url,
+        setParent_category_id,
 		
         setId,
         setErrors,

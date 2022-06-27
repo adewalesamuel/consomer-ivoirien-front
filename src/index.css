@@ -8,7 +8,7 @@ ul {
 }
 
 .slider-opt04__layout01 .media {
-  height: 380px !important;
+  height: 420px !important;
 }
 
 .col-third {
@@ -17,6 +17,30 @@ ul {
 
 .col-fourth {
   width: 25%;
+}
+
+.py-20 {
+  padding:20px 0;
+}
+
+.py-40 {
+  padding:40px 0;
+}
+
+.py-60 {
+  padding:60px 0;
+}
+
+.my-2O {
+  margin: 20px 0;
+}
+
+.my-4O {
+  margin: 40px 0;
+}
+
+.col-sm-12 {
+  display: inline-block;
 }
 
 ul.products-list {
@@ -70,4 +94,83 @@ a.link-to-product img {
 
 .sumary-product .product-attribute .category {
   margin: 0 !important;
+}
+
+.sumary-product .media .slider-nav li img {
+  object-fit: cover;
+}
+
+.media .biolife-carousel > li {
+  display: inline-block !important;
+}
+
+.nav-menu .menu-item {
+  position: relative;
+}
+
+.nav-menu .menu-item > button {
+  background-color: transparent;
+  color: initial;
+}
+
+.nav-menu .menu-item:hover .sub-menu {
+  display: block;
+}
+
+.nav-menu .sub-menu {
+  min-width: 200px;
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  z-index: 11;
+}
+
+.nav-menu .sub-menu ul {
+  padding: 10px 0;
+  width: 100%;
+}
+
+.nav-menu .sub-menu li > a {
+  padding: 10px 20px;
+}
+
+.souscriptions .slide-down-box {
+  visibility: visible !important;
+  position: relative !important;
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+.souscriptions .contain-product.layout-default {
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+}
+
+.modal-body {
+  display: inline-block;
+  width: 100%;
+}
+
+.modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 0;
+  border: none;
+  font-size: 20px;
+  border-radius: 100%;
+}
+
+.d-flex {
+  display: flex !important;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.order-summary .cart-list .cart-item .info {
+  padding-top: 10px !important;
 }

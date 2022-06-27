@@ -2,12 +2,10 @@ import { useState } from "react";
 import { Components } from "../components";
 import { Hooks } from "../hooks";
 import { Services } from "../services";
-import { useNavigate } from "react-router-dom";
 import { Utils } from "../utils";
 
 export function AuthentificationView(props) {
     const abortController = new AbortController();
-    const navigate = useNavigate();
 
     const useUtilisateur = Hooks.useUtilisateur();
 
@@ -41,20 +39,10 @@ export function AuthentificationView(props) {
         e.preventDefault();
 
         if (useUtilisateur.password !== useUtilisateur.cpassword)
-            return alert("Les mots de passe doivent être identique");
-
-        const payload = {
-            nom_prenoms: useUtilisateur.nom_prenoms,
-            adresse: useUtilisateur.adresse,
-            ville: useUtilisateur.ville,
-            telephone: useUtilisateur.telephone,
-            email: useUtilisateur.email,
-            password: useUtilisateur.password,
-        };
+            return alert("Les mots de passe doivent être identique");   
         
         setIsDisabled(true);
-        Services.UtilisateurService.create(JSON.stringify(payload), 
-        abortController.signal)
+        useUtilisateur.createUtilisateur(abortController.signal)
         .then(response => {
             alert("Vous êtes inscris avec success! Veuillez vous connecter");
             useUtilisateur.emptyUtilisateur();
@@ -88,7 +76,7 @@ export function AuthentificationView(props) {
                                 <p className="form-row wrap-btn">
                                     <button className="btn btn-submit btn-bold" type="submit" disabled={isDisabled}
                                     onClick={handleLoginSubmit}>Connexion</button>
-                                    <a href="#" className="link-to-help">Mot de passe oublié ?</a>
+                                    <a href="/" className="link-to-help">Mot de passe oublié ?</a>
                                 </p>
                             </form>
                         </div>

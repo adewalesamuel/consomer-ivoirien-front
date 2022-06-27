@@ -5,12 +5,12 @@ export const useSouscription = () => {
     const [id, setId] = useState('');
 	const [titre, setTitre] = useState('');
 	const [description, setDescription] = useState('');
-	const [img_urls, setImg_urls] = useState('');
+	const [img, setImg] = useState('');
+	const [img_url, setImg_Url] = useState('');
 	const [periode, setPeriode] = useState('');
 	const [prix, setPrix] = useState('');
 	const [attributs, setAttributs] = useState('');
 	
-
     const [errors, setErrors] = useState([]);
     const [isDisabled, setIsDisabled] = useState(false);
 
@@ -23,30 +23,28 @@ export const useSouscription = () => {
     }
 
     const createSouscription = signal => {
-        const payload = {
-            titre,
-		description,
-		img_urls,
-		periode,
-		prix,
-		attributs,
-		
-        };
+        const formData = new FormData();
 
-        return Services.SouscriptionService.create(JSON.stringify(payload), signal);
+        formData.append("titre", titre);
+        formData.append("description", description);
+        formData.append("img", img);
+        formData.append("periode", periode);
+        formData.append("prix", prix);
+        formData.append("attributs", attributs);
+
+        return Services.SouscriptionService.create(formData, signal);
     }
     const updateSouscription = (souscriptionId, signal) => {
-        const payload = {
-            titre,
-		description,
-		img_urls,
-		periode,
-		prix,
-		attributs,
-		
-        };
+        const formData = new FormData();
 
-        return Services.SouscriptionService.update(souscriptionId, JSON.stringify(payload), signal);
+        formData.append("titre", titre);
+        formData.append("description", description);
+        formData.append("img", img);
+        formData.append("periode", periode);
+        formData.append("prix", prix);
+        formData.append("attributs", attributs);
+
+        return Services.SouscriptionService.update(souscriptionId, formData, signal);
     }
     const deleteSouscription = (souscriptionId, signal) => {
         return Services.SouscriptionService.destroy(souscriptionId, signal);
@@ -55,7 +53,7 @@ export const useSouscription = () => {
         setId(souscription.id);
         setTitre(souscription.titre ?? '');
 		setDescription(souscription.description ?? '');
-		setImg_urls(souscription.img_urls ?? '');
+		setImg_Url(souscription.img_url ?? '');
 		setPeriode(souscription.periode ?? '');
 		setPrix(souscription.prix ?? '');
 		setAttributs(souscription.attributs ?? '');
@@ -65,7 +63,8 @@ export const useSouscription = () => {
         setId('');
         setTitre('');
 		setDescription('');
-		setImg_urls('');
+		setImg('');
+		setImg_Url('');
 		setPeriode('');
 		setPrix('');
 		setAttributs('');
@@ -76,19 +75,21 @@ export const useSouscription = () => {
         id,
         titre,
 		description,
-		img_urls,
+		img,
 		periode,
 		prix,
 		attributs,
+        img_url,
 		
         errors,
         isDisabled,
         setTitre,
 		setDescription,
-		setImg_urls,
+		setImg,
 		setPeriode,
 		setPrix,
 		setAttributs,
+        setImg_Url,
 		
         setId,
         setErrors,

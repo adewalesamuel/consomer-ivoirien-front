@@ -1,6 +1,6 @@
 import { Api } from './Api';
 
-const  ENPOINTS = {
+const ENPOINTS = {
     Notification: 'notifications',
 };
 

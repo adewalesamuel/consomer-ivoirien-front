@@ -12,6 +12,11 @@ const getById = (id, signal) => {
     return Api.get(`${ENPOINTS.Categorie}/${id}`, signal);
 }
 
+const getAllPostByPage = (id, page=1, signal) => {
+    return Api.get(`${ENPOINTS.Categorie}/${id}/posts?page=${page}`, signal);
+
+}
+
 const create = (payload, signal) => {
     return Api.post(ENPOINTS.Categorie, payload, signal)
 }
@@ -25,6 +30,7 @@ const destroy = (id, signal) => {
 
 export const CategorieService = {
     getAll,
+    getAllPostByPage,
     getById,
     create,
     update,

@@ -7,9 +7,9 @@ export const useSouscriptionUtilisateur = () => {
 	const [souscription_id, setSouscription_id] = useState('');
 	const [utilisateur_id, setUtilisateur_id] = useState('');
 	const [prix, setPrix] = useState('');
-	const [quantite, setQuantite] = useState('');
+	const [quantite, setQuantite] = useState(1);
 	const [status, setStatus] = useState('');
-	const [mode_paiement, setMode_paiement] = useState('');
+	const [mode_paiement, setMode_paiement] = useState('CinetPay');
 	
 
     const [errors, setErrors] = useState([]);

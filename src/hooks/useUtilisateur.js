@@ -13,6 +13,7 @@ export const useUtilisateur = () => {
 	const [telephone, setTelephone] = useState('');
 	const [img_url, setImg_url] = useState('');
 	const [status, setStatus] = useState('');
+	const [created_at, setCreated_at] = useState('');
 	
 
     const [errors, setErrors] = useState([]);
@@ -72,6 +73,7 @@ export const useUtilisateur = () => {
 		setTelephone(utilisateur.telephone ?? '');
 		setImg_url(utilisateur.img_url ?? '');
 		setStatus(utilisateur.status ?? '');
+		setCreated_at(utilisateur.created_at);
 		
     }
     const emptyUtilisateur = () => {
@@ -86,6 +88,7 @@ export const useUtilisateur = () => {
 		setTelephone('');
 		setImg_url('');
 		setStatus('');
+		setCreated_at('');
 		
     }
 
@@ -101,6 +104,7 @@ export const useUtilisateur = () => {
 		telephone,
 		img_url,
 		status,
+		created_at,
 		
         errors,
         isDisabled,
@@ -114,6 +118,7 @@ export const useUtilisateur = () => {
 		setTelephone,
 		setImg_url,
 		setStatus,
+		setCreated_at,
 		
         setId,
         setErrors,

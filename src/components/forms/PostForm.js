@@ -1,4 +1,3 @@
-import { Components } from '..'
 import { Api } from '../../services/Api'
 
 export function PostForm(props) {
@@ -8,18 +7,25 @@ export function PostForm(props) {
             <div className='col-sm-6 col-sx-12'>
                 <div className='col-12'>
                     <div className='form-group'>
-                        <label htmlFor='categorie_id'>Categorie</label>
-                        <select className='select2 form-control' id='categorie_id' name='categorie_id' 
-                        value={props.usePost.categorie_id ?? ''} disabled={props.isDisabled} 
-                        onChange={ e => props.usePost.setCategorie_id(e.target.value) ?? null} required>
-                            <option hidden>Selectionnez une categorie</option>
-                            {
-                                props.categories.map(item => {
-                                    return <option key={Math.random()} value={item.id ?? ''}>{item.nom}</option>
-                                })
-                            } 
-                        </select>
-                    </div>
+                            <label htmlFor='categorie_id'>Categorie</label>
+                            <select className='select2 form-control' id='categorie_id' name='categorie_id' 
+                            value={props.usePost.categorie_id ?? ''} disabled={props.isDisabled} 
+                            onChange={ e => props.usePost.setCategorie_id(e.target.value) ?? null} required>
+                                <option hidden>Selectionnez une categorie</option>
+                                {
+                                    props.categories.map(categorie => {
+                                        return (<optgroup key={Math.random()} label={categorie.nom ?? ''}>
+                                            {categorie.sub_categories ?
+                                                categorie.sub_categories.map((sub_categorie, index) => {
+                                                    return <option key={index} value={sub_categorie.id}>{sub_categorie.nom}</option>
+                                                })
+                                                : null
+                                            }
+                                        </optgroup>)
+                                    })
+                                } 
+                            </select>
+                        </div>
                 </div>
                 <div className='col-12'>
                     <div className='form-group'>
@@ -76,7 +82,7 @@ export function PostForm(props) {
                                         <li key={Math.random()} className="col-xs-3">
                                             <span className='delete-icon fa fa-trash text-danger' title='Supprimer'
                                             onClick={event => props.handleImageDeleteClick(event, img_url) ?? null}></span>
-                                            <img className='thumbnail' src={`${Api.URL}/${img_url}`} width='100%' height={100}/>
+                                            <img className='thumbnail' src={`${Api.URL}/${img_url}`} width='100%' alt='' height={100}/>
                                         </li>
                                     )
                                 })

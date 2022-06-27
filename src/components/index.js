@@ -27,10 +27,16 @@ import { BrandList } from './BrandList';
 import { Table } from './Table';
 import { ProductItem } from './ProductItem';
 import { ProductList } from './ProductList';
+import { ProductAttributes } from './ProductAttributes';
+import { ProductMedia } from './ProductMedia';
+import { ProductInfo } from './ProductInfo';
 import { ServiceBox } from './ServiceBox';
 import { AccountTab } from './AccountTab';
+import { CategorieSidebar } from './CategorieSidebar';
 
 import { Loader } from './Loader';
+import { Modal } from './Modal';
+import { PaiementCommande } from './PaiementCommande';
 
 
 export const Components = {
@@ -56,11 +62,16 @@ export const Components = {
 	SearchBar,
 	ProductItem,
 	ProductList,
+	ProductAttributes,
+	ProductMedia,
+	ProductInfo,
 	ServiceBox,
 	BrandList,
 	NavBar,
 	TitleSection,
 	AccountTab,
-	Loader
-
+	Loader,
+	CategorieSidebar,
+	Modal,
+	PaiementCommande
 }

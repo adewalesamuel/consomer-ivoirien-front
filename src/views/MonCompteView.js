@@ -1,9 +1,19 @@
+import { useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { Views } from ".";
 import { Components } from "../components";
+import { AuthService } from "../services/AuthService";
+import { Auth } from "../utils/Auth";
 
 export function MonCompteView(props) {
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!Auth.isLoggedIn())
+            navigate('/authentification', {replace: true});
+    }, []);
+
+    if (!Auth.isLoggedIn()) return null;
 
     return (
         <>
@@ -16,8 +26,8 @@ export function MonCompteView(props) {
                     </div>
                     <div className="col-xs-6 col-md-3">
                         <Components.AccountTab title='Vos produits' icon='fa-list' 
-                        handleClick={e => console.log("clicked tabs")}/>
-                    </div>
+                        handleClick={e => navigate('produits')}/>
+                        </div>
                     <div className="col-xs-6 col-md-3">
                         <Components.AccountTab title='Votre profil de vendeur' icon='fa-user' 
                         handleClick={e => console.log("clicked tabs")}/>
@@ -31,8 +41,15 @@ export function MonCompteView(props) {
                     <Routes>
                         <Route exact path='ajouter-produit' element={<Views.AjouterProduitView 
                         categories={props.categories}/>} />
+                        <Route exact path='produits/:id/modifier' element={<Views.ProduitUtilisateurEditView 
+                         categories={props.categories}/>} />
+                        <Route exact path='produits' element={<Views.ProduitUtilisateurListView />} />
+                        <Route exact path='souscriptions/*' element={<Views.SouscriptionListView />} />
                     </Routes>
                 </div>
+                <button className="btn btn-danger my-20" onClick={e => {
+                    AuthService.logout(new AbortController().signal );
+                    window.location.assign('/');}}>Se Deconnecter</button>
             </div>
         </>
     )

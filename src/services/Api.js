@@ -26,15 +26,13 @@ const get = (endpoint, signal=new AbortController().signal) => {
                 return reject({
                     status: response.status,
                     messages: getResponseErrors(response)
-                    });
+                });
             }
-
+            
             return response.json();
         })
-        .then(result => {
-            resolve(result)
-        })
-        .catch(error => reject(error))
+        .then(result => resolve(result))
+        .catch(error => reject(error));
     })
 }
 
@@ -117,6 +115,9 @@ const put = (endpoint, payload='', signal=new AbortController().signal) => {
 
 const erase = (endpoint, signal=new AbortController().signal) => {
     return new Promise((resolve, reject) => {
+        if (!window.confirm('Voulez vous vraiment supprimer cette entrée')) 
+            return reject(null);
+
         fetch(`${URL}${ROOT_PATH}/${endpoint}`,
         {
             method:'delete', 

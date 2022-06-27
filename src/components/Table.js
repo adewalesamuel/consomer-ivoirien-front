@@ -9,13 +9,11 @@ export function Table(props) {
 
         if (props.tableActions) tableHead.push('actions');
 
-        return tableHead.map((item,index) => {
-            return(
+        return tableHead.map((item,index) => (
                 <th key={index * Math.random()}>
                     {item.replace(/_/g, ' ')}
                 </th>
-            )
-        })
+            ));
     }
 
     function renderTableData(data, dataIndex=0) {
@@ -55,7 +53,7 @@ export function Table(props) {
                 return (
                     <button key={Math.random()} data-index={dataIndex} data-id={data.id} className="ml-1 btn btn-light" 
                     onClick={(event, item) => props.handleEditClick(event, data) ?? null} >
-                        <i className="dripicons-document-edit text-primary"></i>
+                        <i className="dripicons-document-edit text-primary">edit</i>
                     </button>
                 );
             if (item === "info")
@@ -68,16 +66,12 @@ export function Table(props) {
                 return (
                 <button key={Math.random()} data-index={dataIndex} data-id={data.id} className="ml-1 btn btn-light" 
                 onClick={(event, item) => props.handleDeleteClick(event, data) ?? null}>
-                    <i className="dripicons-trash text-danger"></i>
+                    <i className="dripicons-trash text-danger">delete</i>
                 </button>);
             return null;
         });
 
-        tableCells.push(
-            <td style={{borderBottom: "1px solid #DFE3E7"}} key={Math.random()}>
-                {actions}
-            </td>
-        )
+        tableCells.push(<td style={{borderBottom: "1px solid #DFE3E7"}} key={Math.random()}>{actions}</td>)
 
         return tableCells;
     }

@@ -19,15 +19,17 @@ export function AccueilView(props) {
                 {props.categories.length === 0 ?
                    <Components.Loader />
                 : null}
-                {props.categories.map((categorie, index) => {
-                return (
+                {props.categories.slice(0,5).map((categorie, index) => {
+                    return (
                         <div className="row" key={index}>
-                            <div className="col-lg-12 bold-style biolife-title-box__bold-style mobile-tiny sm-margin-top-80px">
+                            <div className="col-lg-12 bold-style biolife-title-box__bold-style 
+                            mobile-tiny sm-margin-top-80px">
                                 <h3 className="title" style={{color: 'orange'}}>{categorie.nom}</h3>
                             </div>
                             <div className="col-lg-4 col-sm-4">
                                 <div className="banner-contain">
-                                    <img src={`${Api.URL}/${categorie.img_url}`} />
+                                    <img src={`${Api.URL}/${categorie.img_url}`} width="100%" 
+                                    alt={categorie.nom}/>
                                 </div>
                             </div>
 
@@ -35,7 +37,7 @@ export function AccueilView(props) {
                             <Components.ProductList products={categorie.posts} colNumber='3'/>
                             </div>
                         </div>
-                ) 
+                    ) 
                 })}
                 <Components.ServiceBox />
                 <Components.BrandList />
