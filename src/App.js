@@ -15,16 +15,16 @@ import './index-responsive.css'
 
 function App() {
   return (
-    <BrowserRouter basename="/consomer-ivoirien/public/" >
+  //   <BrowserRouter basename="/consomer-ivoirien/public/" >
+  //     <Routes>
+  //       <Route path='*' element={<Components.MainLayout />} />
+  //     </Routes>
+  //   </BrowserRouter>
+    <BrowserRouter>
       <Routes>
         <Route path='*' element={<Components.MainLayout />} />
       </Routes>
     </BrowserRouter>
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path='*' element={<Components.MainLayout />} />
-    //   </Routes>
-    // </BrowserRouter>
   );
 }
 

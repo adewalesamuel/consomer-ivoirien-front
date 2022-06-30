@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Components } from "../components";
 
 import { Hooks } from "../hooks";
 import { useParams } from "react-router-dom";
 
 export function ProduitDetailsView(props) {
-    const abortController = new AbortController();
+    const abortController = useMemo(() => new AbortController(), []);
     
     const [posts, setPosts] = useState([]);
     
@@ -21,7 +21,7 @@ export function ProduitDetailsView(props) {
         return () => {
         //
         }
-    }, [])
+    }, [abortController, id])
     
 
     return (

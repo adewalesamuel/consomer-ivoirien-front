@@ -21,6 +21,10 @@ const create = (payload, signal) => {
     return Api.post(ENPOINTS.Utilisateur, payload, signal)
 }
 
+const createPost = (payload, signal) => {
+    return Api.post(`utilisateur/${ENPOINTS.Post}`, payload, signal)
+}
+
 const update = (id, payload, signal) => {
     return Api.put(`${ENPOINTS.Utilisateur}/${id}`, payload, signal)
 }
@@ -45,5 +49,6 @@ export const UtilisateurService = {
     destroy,
     getPosts,
     updatePost,
-    destroyPost
+    destroyPost,
+    createPost
 }

@@ -22,7 +22,28 @@ export function AjouterProduitView(props) {
             alert("Félicitation! Votre produit à bien été ajouté");
             navigate('/mon-compte/produits');
           })
-          .catch(err => setIsDisabled(false));
+          .catch(err => {
+            setIsDisabled(false);
+            
+           err.messages.then(message => {
+
+            if (err.status === 404) {
+              alert("Veuillez souscrire à un pack pour ajouter un produit !");
+              navigate('/mon-compte/souscriptions');
+
+              return;
+            }
+            
+            if (err.status === 500) {
+              alert(message); 
+              navigate('/mon-compte/souscriptions');
+
+              return;
+            }
+
+            alert(message);
+          })
+          });
     }
     const handleFileChange = event => {
       event.preventDefault();

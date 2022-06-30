@@ -53,7 +53,7 @@ export const usePost = () => {
 		
         };
 
-        return Services.PostService.create(JSON.stringify(payload), signal);
+        return Services.UtilisateurService.createPost(JSON.stringify(payload), signal);
     }
     const updatePost = (postId, signal) => {
         const payload = {

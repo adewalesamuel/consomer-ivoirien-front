@@ -8,6 +8,7 @@ import { PubliciteForm } from './forms/PubliciteForm';
 import { SouscriptionForm } from './forms/SouscriptionForm';
 import { SouscriptionUtilisateurForm } from './forms/SouscriptionUtilisateurForm';
 
+import { Logo } from './Logo';
 import { Preloader } from './Preloader';
 import { Header } from './Header';
 import { HeaderTop } from './HeaderTop';
@@ -37,7 +38,6 @@ import { CategorieSidebar } from './CategorieSidebar';
 import { Loader } from './Loader';
 import { Modal } from './Modal';
 import { PaiementCommande } from './PaiementCommande';
-
 
 export const Components = {
     UtilisateurForm,
@@ -73,5 +73,6 @@ export const Components = {
 	Loader,
 	CategorieSidebar,
 	Modal,
-	PaiementCommande
+	PaiementCommande,
+	Logo
 }

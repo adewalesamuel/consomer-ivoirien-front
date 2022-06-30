@@ -1,3 +1,4 @@
+import { Components } from '.';
 import paiement1 from '../assets2/images/card1.jpg';
 import paiement2 from '../assets2/images/card2.jpg';
 import paiement3 from '../assets2/images/card3.jpg';
@@ -13,7 +14,7 @@ export function Footer(props) {
                     <div className="row">
                         <div className="col-lg-4 col-md-4 col-sm-9">
                             <section className="footer-item">
-                                <a href="/" className="logo footer-logo"><img src="/assets2/images/organic-4.png" alt="biolife logo" width="135" height="36" /></a>
+                                <Components.Logo />
                                 <div className="footer-phone-info">
                                     <i className="biolife-icon icon-head-phone"></i>
                                     <p className="r-info">
@@ -83,7 +84,7 @@ export function Footer(props) {
                                         <li>
                                             <p className="info-item">
                                                 <i className="biolife-icon icon-letter"></i>
-                                                <b className="desc">Email:  info@consomerivoirien.com</b>
+                                                <b className="desc">Email:  info@jeconsommeivoirien.com</b>
                                             </p>
                                         </li>
                                         <li>

@@ -88,6 +88,7 @@ export const useCategorie = (l) => {
 		slug,
 		description,
 		img_url,
+        categories,
         parent_category_id,
 		
         errors,
