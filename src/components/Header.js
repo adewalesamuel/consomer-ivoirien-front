@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { Components } from ".";
+import { Utils } from "../utils";
 
 export function Header(props) {
+    const MOBILE_MENU_ID = 'mobile-menu';
+
     return (
         <header id="header" className="header-area style-01 layout-04">
             <Components.HeaderTop />
@@ -16,15 +19,15 @@ export function Header(props) {
                                 <ul className="menu biolife-menu clone-main-menu clone-primary-menu" id="primary-menu" data-menuname="main menu">
                                     <li className="menu-item"><Link to="/">Accueil</Link></li>
                                     <li className="menu-item">
-                                        <a href="/" className="menu-name" data-title="Product">Articles</a>
+                                        <Link to="/articles" className="menu-name" data-title="Product">Articles</Link>
                                     </li>
                                     <li className="menu-item">
-                                        <a href="/" className="menu-name" data-title="Pages">Qui sommes nous</a>
+                                        <Link to="/qui-sommes-nous" className="menu-name" data-title="Pages">Qui sommes nous</Link>
                                     </li>
                                     <li className="menu-item">
-                                        <a href="/" className="menu-name" data-title="Blog">Blog</a>
+                                        <Link to="/blog" className="menu-name" data-title="Blog">Blog</Link>
                                     </li>
-                                    <li className="menu-item"><a href="/">Contact</a></li>
+                                    <li className="menu-item"><Link to="/contact">Contact</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -35,12 +38,12 @@ export function Header(props) {
                                     <div className="mobile-search-content">
                                         <form action="#" className="form-search" name="mobile-seacrh" method="get">
                                             <a href="/" className="btn-close"><span className="biolife-icon icon-close-menu"></span></a>
-                                            <input type="text" name="s" className="input-text" defaultValue="" placeholder="Search here..." />
+                                            <input type="text" name="s" className="input-text" defaultValue="" placeholder="Rechercher..." />
                                             <select name="category">
                                                 <option defaultValue="-1">All Categories</option>
                                                 {/* List des categores */}
                                             </select>
-                                            <button type="submit" className="btn-submit">go</button>
+                                            <button type="submit" className="btn-submit">Rechercher</button>
                                         </form>
                                     </div>
                                 </div>
@@ -64,12 +67,12 @@ export function Header(props) {
                                         </a>
                                     </div>
                                 </div>
-                                <div className="mobile-menu-toggle">
-                                    <a className="btn-toggle" data-object="open-mobile-menu" href="/">
+                                <div className="mobile-menu-toggle" onClick={() => Utils.DomManager.toggleElement(MOBILE_MENU_ID)} >
+                                    <button className="btn-toggle btn-link" style={{padding: '0px', margin: '0'}}>
                                         <span></span>
                                         <span></span>
                                         <span></span>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>

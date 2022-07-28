@@ -16,7 +16,7 @@ export const usePost = () => {
 	const [categorie, setCategorie] = useState('');
 	const [utilisateur, setUtilisateur] = useState('')
 
-	const villes = ['Abdijan', 'Bouake', 'Yamoussoukro'];
+	const villes = ['Abidjan'];
 
     const [errors, setErrors] = useState([]);
     const [isDisabled, setIsDisabled] = useState(false);

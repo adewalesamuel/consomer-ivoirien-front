@@ -7,7 +7,7 @@ export function SearchBar(props) {
                         <strong style={{color:'white'}}>Contactez nous</strong>
                         <p className="telephone" style={{color:'orange'}}>
                             <i className="fa fa-phone" aria-hidden="true"></i>
-                            <b className="phone-number">(+900) 123 456 7891</b>
+                            <b className="phone-number">(+225) 07 58 74 46 77</b>
                         </p>
                     </div>
                 </div>

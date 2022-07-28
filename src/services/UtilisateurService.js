@@ -3,6 +3,7 @@ import { Api } from './Api';
 const  ENPOINTS = {
     Utilisateur: 'utilisateurs',
     Post: 'posts',
+    Souscription: 'souscription'
 };
 
 const getAll = signal => {
@@ -11,6 +12,10 @@ const getAll = signal => {
 
 const getPosts = (id, signal) => {
     return Api.get(`${ENPOINTS.Utilisateur}/${id}/posts`, signal);
+}
+
+const getSouscription = signal => {
+    return Api.get(`utilisateur/${ENPOINTS.Souscription}`, signal);
 }
 
 const getById = (id, signal) => {
@@ -50,5 +55,6 @@ export const UtilisateurService = {
     getPosts,
     updatePost,
     destroyPost,
-    createPost
+    createPost,
+    getSouscription
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Components } from "../components";
 import { Hooks } from "../hooks";
 import { Services } from "../services";
@@ -12,6 +13,7 @@ export function AuthentificationView(props) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("");
     const [isDisabled, setIsDisabled] = useState(false);
+    const [has_accepted_conditions, setHas_accepted_conditions] = useState(false);
 
     const handleLoginSubmit = e => {
         e.preventDefault();
@@ -30,13 +32,16 @@ export function AuthentificationView(props) {
             window.location.assign('/mon-compte');
         })
         .catch(err => {
-            console.log(err);
+            alert('Une erreure est survenue. Votre mail ou mot de passe est incorrect !')
             setIsDisabled(false);
         });
     }
 
     const handleSignUpSubmit = e => {
         e.preventDefault();
+
+        if (!has_accepted_conditions) 
+            return alert('Vous devez accepter les conditions d\'utilisation !')
 
         if (useUtilisateur.password !== useUtilisateur.cpassword)
             return alert("Les mots de passe doivent être identique");   
@@ -47,16 +52,17 @@ export function AuthentificationView(props) {
             alert("Vous êtes inscris avec success! Veuillez vous connecter");
             useUtilisateur.emptyUtilisateur();
             setIsDisabled(false);
+            window.scrollTo({'behavior': 'smooth', top:0});
         })
         .catch(err => {
-            console.log(err);
+            if (err.status === 422) alert('Veuillez remplir correctement les champs !')
             setIsDisabled(false);
         });
     }
 
     return (
         <>
-            <Components.HeroSection title={"Connexion"} />
+            <Components.HeroSection title={"Connexion/Inscription"} />
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -76,7 +82,7 @@ export function AuthentificationView(props) {
                                 <p className="form-row wrap-btn">
                                     <button className="btn btn-submit btn-bold" type="submit" disabled={isDisabled}
                                     onClick={handleLoginSubmit}>Connexion</button>
-                                    <a href="/" className="link-to-help">Mot de passe oublié ?</a>
+                                    <Link to="/" className="link-to-help">Mot de passe oublié ?</Link>
                                 </p>
                             </form>
                         </div>
@@ -89,7 +95,9 @@ export function AuthentificationView(props) {
                                 <p className="sub-title">Créez un compte en remplissant le formulaire ci-dessous:</p>
                                 <div style={{padding: "15px"}}>
                                     <Components.UtilisateurForm useUtilisateur={useUtilisateur} 
-                                    handleFormSubmit={handleSignUpSubmit} isDisabled={isDisabled}/>
+                                    handleFormSubmit={handleSignUpSubmit} isDisabled={isDisabled}
+                                    has_accepted_conditions={has_accepted_conditions} 
+                                    setHas_accepted_conditions={setHas_accepted_conditions}/>
                                 </div>
                             </div>
                         </div>

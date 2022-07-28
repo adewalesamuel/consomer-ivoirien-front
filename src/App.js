@@ -12,8 +12,16 @@ import './assets2/css/main-color04.css';
 
 import './index.css'
 import './index-responsive.css'
+import { useEffect } from 'react';
 
 function App() {
+
+  useEffect(() => {
+    window.document.head.insertBefore(
+      window.document.createComment("by samueladewale | adewalesamuel.github.io"),
+      window.document.head.firstChild);
+  }, [])
+
   return (
   //   <BrowserRouter basename="/consomer-ivoirien/public/" >
   //     <Routes>

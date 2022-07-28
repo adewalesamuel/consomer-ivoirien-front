@@ -1,11 +1,10 @@
+import { Link } from 'react-router-dom';
 import { Components } from '.';
-import paiement1 from '../assets2/images/card1.jpg';
-import paiement2 from '../assets2/images/card2.jpg';
-import paiement3 from '../assets2/images/card3.jpg';
-import paiement4 from '../assets2/images/card4.jpg';
-import paiement5 from '../assets2/images/card5.jpg';
+import { Utils } from '../utils';
 
 export function Footer(props) {
+    const MOBILE_MENU_ID = 'mobile-menu';
+
     return (
        <>
        <footer id="footer" className="footer layout-03">
@@ -19,7 +18,7 @@ export function Footer(props) {
                                     <i className="biolife-icon icon-head-phone"></i>
                                     <p className="r-info">
                                         <span>Vous avez des question ?</span>
-                                        <span>(700)  9001-1909  (900) 689 -66</span>
+                                        <span>(+225) 07 58 74 46 77</span>
                                     </p>
                                 </div>
                                 <div className="newsletter-block layout-01">
@@ -40,24 +39,17 @@ export function Footer(props) {
                                     <div className="col-lg-6 col-sm-6 col-xs-6">
                                         <div className="wrap-custom-menu vertical-menu-2">
                                             <ul className="menu">
-                                                <li><a href="/">Qui sommes nous</a></li>
-                                                <li><a href="/">Presse</a></li>
-                                                <li><a href="/">Achat sécurisé</a></li>
-                                                <li><a href="/">Information de livraison</a></li>
-                                                <li><a href="/">Politique de confidentialité</a></li>
-                                                <li><a href="/">Plan du site</a></li>
+                                                <li><Link to="/qui-sommes-nous">Qui sommes nous</Link></li>
+                                                <li><Link to="/authentification">Devenir Vendeur</Link></li>
+                                                <li><Link to="/conditions-d-utilisation">Conditions d'utilisation</Link></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-sm-6 col-xs-6">
                                         <div className="wrap-custom-menu vertical-menu-2">
                                             <ul className="menu">
-                                                <li><a href="/">A propos</a></li>
-                                                <li><a href="/">Nos services</a></li>
-                                                <li><a href="/">Projets</a></li>
-                                                <li><a href="/">Contactez nous</a></li>
-                                                <li><a href="/">Innovation</a></li>
-                                                <li><a href="/">Temoignages</a></li>
+                                            <li><Link to="/faq">Faq</Link></li>
+                                            <li><Link to="/contact">Contactez nous</Link></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -72,19 +64,19 @@ export function Footer(props) {
                                         <li>
                                             <p className="info-item">
                                                 <i className="biolife-icon icon-location"></i>
-                                                <b className="desc">Abidjan, Riviera Palmerais </b>
+                                                <b className="desc">Abidjan, Cocody Riviera 4, Beverly Hill </b>
                                             </p>
                                         </li>
                                         <li>
                                             <p className="info-item">
                                                 <i className="biolife-icon icon-phone"></i>
-                                                <b className="desc">Tel: (+067) 234 789  (+068) 222 888</b>
+                                                <b className="desc">Tel: (+225) 07 58 74 46 77</b>
                                             </p>
                                         </li>
                                         <li>
                                             <p className="info-item">
                                                 <i className="biolife-icon icon-letter"></i>
-                                                <b className="desc">Email:  info@jeconsommeivoirien.com</b>
+                                                <b className="desc">Email:  info@jeconsommivoirien.com</b>
                                             </p>
                                         </li>
                                         <li>
@@ -98,28 +90,23 @@ export function Footer(props) {
                                 <div className="biolife-social inline">
                                     <ul className="socials">
                                         <li>
-                                            <a href="/" title="twitter" className="socail-btn">
-                                                <i className="fa fa-twitter" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/" title="facebook" className="socail-btn">
+                                            <a href="https://facebook.com/Je-Consomme-Ivoirien-182192885906130/" title="facebook" className="socail-btn">
                                                 <i className="fa fa-facebook" aria-hidden="true"></i>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="/" title="pinterest" className="socail-btn">
-                                                <i className="fa fa-pinterest" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li>
+                                        {/* <li>
                                             <a href="/" title="youtube" className="socail-btn">
                                                 <i className="fa fa-youtube" aria-hidden="true"></i>
                                             </a>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <a href="/" title="instagram" className="socail-btn">
                                                 <i className="fa fa-instagram" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://twitter.com/jeconsommivo" title="twitter" className="socail-btn">
+                                                <i className="fa fa-twitter" aria-hidden="true"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -130,20 +117,6 @@ export function Footer(props) {
                     <div className="row">
                         <div className="col-xs-12">
                             <div className="separator sm-margin-top-62px xs-margin-top-40px"></div>
-                        </div>
-                        <div className="col-lg-6 col-sm-6 col-xs-12">
-                            {/* <div className="copy-right-text"><p><a href="/emplateshub.net">Templates Hub</a></p></div> */}
-                        </div>
-                        <div className="col-lg-6 col-sm-6 col-xs-12">
-                            <div className="payment-methods">
-                                <ul>
-                                    <li><a href="/" className="payment-link"><img src={paiement1} width="51" height="36" alt="" /></a></li>
-                                    <li><a href="/" className="payment-link"><img src={paiement2} width="51" height="36" alt="" /></a></li>
-                                    <li><a href="/" className="payment-link"><img src={paiement3} width="51" height="36" alt="" /></a></li>
-                                    <li><a href="/" className="payment-link"><img src={paiement4} width="51" height="36" alt="" /></a></li>
-                                    <li><a href="/" className="payment-link"><img src={paiement5} width="51" height="36" alt="" /></a></li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -159,24 +132,40 @@ export function Footer(props) {
                     </a>
                 </div>
                 <div className="mobile-block block-sidebar">
-                    <a className="menu-bar filter-toggle btn-toggle" data-object="open-mobile-filter" href="/">
+                    <a className="menu-bar filter-toggle btn-toggle" role={'button'}
+                    onClick={() => Utils.DomManager.toggleElement(MOBILE_MENU_ID)}>
                         <i className="fa fa-sliders" aria-hidden="true"></i>
                         <span className="text">Navigation</span>
                     </a>
                 </div>
-                <div className="mobile-block block-minicart">
-                    <a className="link-to-cart" href="/">
-                        <span className="fa fa-shopping-bag" aria-hidden="true"></span>
-                        <span className="text">Panier</span>
-                    </a>
-                </div>
                 <div className="mobile-block block-global">
-                    <a className="menu-bar myaccount-toggle btn-toggle" data-object="global-panel-opened" href="/">
+                    <Link to="/qui-sommes-nous" className="menu-bar myaccount-toggle btn-toggle">
+                        <span className="fa fa-globe" aria-hidden="true"></span>
+                        <span className="text">Présentation</span>
+                    </Link> 
+                    {/* <a className="menu-bar myaccount-toggle btn-toggle" data-object="global-panel-opened" href="/">
                         <span className="fa fa-globe"></span>
                         <span className="text">Global</span>
-                    </a>
+                    </a> */}
+                </div>
+                <div className="mobile-block block-minicart">
+                    {!Utils.Auth.isLoggedIn() ? 
+                        <Link to="/authentification" className="link-to-cart">
+                            <span className="fa fa-user" aria-hidden="true"></span>
+                            <span className="text">Connexion</span>
+                        </Link>
+                        :
+                        <Link to="/mon-compte" className="link-to-cart">
+                              <span className="fa fa-user" aria-hidden="true"></span>
+                            <span className="text">Mon Compte</span>
+                        </Link> 
+                        }
                 </div>
             </div>
+        </div>
+        <div className='mobile-menu' id="mobile-menu">
+            <Components.Logo />
+            <Components.NavBar {...props} isMobile={true}/>
         </div>
        </>
     )

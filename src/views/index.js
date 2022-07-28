@@ -7,6 +7,11 @@ import { CategorieProduitView } from "./CategorieProduitView";
 import { ProduitUtilisateurListView } from "./ProduitUtilisateurListView";
 import { ProduitUtilisateurEditView } from "./ProduitUtilisateurEditView";
 import { SouscriptionListView } from "./SouscriptonListView";
+import { EditProfileView } from "./EditProfileView";
+import { SouscriptionStatus } from "./SouscriptionStatus";
+import { QuiSommesNous } from "./QuiSommesNousView";
+import { ContactView } from "./ContactView";
+import { ConditionsView } from "./ConditionsView";
 
 export const Views = {
     AccueilView,
@@ -17,5 +22,10 @@ export const Views = {
     CategorieProduitView,
     ProduitUtilisateurListView,
     ProduitUtilisateurEditView,
-    SouscriptionListView
+    SouscriptionListView,
+    EditProfileView,
+    SouscriptionStatus,
+    QuiSommesNous,
+    ContactView,
+    ConditionsView
 }

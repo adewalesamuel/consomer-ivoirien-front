@@ -28,9 +28,8 @@ export function PaiementCommande(props) {
 
         setIsDisabled(true);
         Services.SouscriptionUtilisateurService.create(JSON.stringify(payload), abortController.signal)
-        .then(() => {
-            setIsDisabled(false);
-            navigate('/mon-compte/ajouter-produit');
+        .then(response => {
+            window.location.assign(response.payment_url);
         })
         .catch(err => setIsDisabled(false));
     }

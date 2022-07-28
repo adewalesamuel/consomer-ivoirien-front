@@ -9,7 +9,8 @@ export function Slide(props) {
                         <ul className="biolife-carousel">
                             <li>
                                 <div className="slide-contain slider-opt04__layout01">
-                                    <div className="media" style={{backgroundImage: `url(${slideBg})`}}></div>
+                                    <img src={slideBg} alt="" width={'100%'} />
+                                    {/* <div className="media" style={{backgroundImage: `url(${slideBg})`}}></div> */}
                                 </div>
                             </li>
                         </ul>

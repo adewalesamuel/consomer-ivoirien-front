@@ -1,21 +1,18 @@
-import { Link } from 'react-router-dom'
-import { Components } from '..'
-
-export function UtilisateurForm(props) {
+export function ProfileForm(props) {
     return (
         <form className='form' disabled={props.isDisabled ?? false}
         onSubmit={props.handleFormSubmit ?? null}>
-            <div className='row'>
+            <div className='col-lg-6 col-sm-12 col-sx-12'>
                 <div className='col-12'>
                     <div className='form-group'>
-                        <label htmlFor='nom_prenoms'>Nom et prenoms</label>
+                        <label htmlFor='nom_prenoms'>Nom prenoms</label>
                         <input className='form-control' type='text' id='nom_prenoms' name='nom_prenoms' 
                         placeholder='Nom prenoms' value={props.useUtilisateur.nom_prenoms ?? ''}
                         disabled={props.isDisabled} 
                         onChange={ e => props.useUtilisateur.setNom_prenoms(e.target.value) ?? null} required/>
                     </div>
                 </div>
-				<div className='col-12'>
+                <div className='col-12'>
                     <div className='form-group'>
                         <label htmlFor='adresse'>Adresse</label>
                         <input className='form-control' type='text' id='adresse' name='adresse' 
@@ -24,7 +21,7 @@ export function UtilisateurForm(props) {
                         onChange={ e => props.useUtilisateur.setAdresse(e.target.value) ?? null} required/>
                     </div>
                 </div>
-				<div className='col-12'>
+                <div className='col-12'>
                     <div className='form-group'>
                         <label htmlFor='ville'>Ville</label>
                         <input className='form-control' type='text' id='ville' name='ville' 
@@ -33,7 +30,7 @@ export function UtilisateurForm(props) {
                         onChange={ e => props.useUtilisateur.setVille(e.target.value) ?? null} required/>
                     </div>
                 </div>
-				<div className='col-12'>
+                <div className='col-12'>
                     <div className='form-group'>
                         <label htmlFor='telephone'>Telephone</label>
                         <input className='form-control' type='tel' id='telephone' name='telephone' 
@@ -42,6 +39,8 @@ export function UtilisateurForm(props) {
                         onChange={ e => props.useUtilisateur.setTelephone(e.target.value) ?? null} required/>
                     </div>
                 </div>
+            </div>
+            <div className='col-lg-6 col-sm-12 col-sx-12'>
                 <div className='col-12'>
                     <div className='form-group'>
                         <label htmlFor='email'>Email</label>
@@ -51,7 +50,7 @@ export function UtilisateurForm(props) {
                         onChange={ e => props.useUtilisateur.setEmail(e.target.value) ?? null} required/>
                     </div>
                 </div>
-				<div className='col-12'>
+                <div className='col-12'>
                     <div className='form-group'>
                         <label htmlFor='password'>Mot de passe</label>
                         <input className='form-control' type='password' id='password' name='password' 
@@ -68,16 +67,6 @@ export function UtilisateurForm(props) {
                         disabled={props.isDisabled} 
                         onChange={ e => props.useUtilisateur.setCpassword(e.target.value) ?? null} required/>
                     </div>
-                </div>
-                <div className='col-12'>
-                    <input className='form-check-input' type='checkbox' id='has_accepted_conditions' 
-                    name='has_accepted_conditions' placeholder='Mot de passe' value={props.has_accepted_conditions ?? ''}
-                    checked={props.has_accepted_conditions ?? false} disabled={props.isDisabled} 
-                    onChange={ e => props.setHas_accepted_conditions(!props.has_accepted_conditions) ?? null} required/>
-
-                    <label className="form-check-label" htmlFor="has_accepted_conditions" style={{marginLeft: "20px"}}>
-                        En cochant cette case vous acceptez <Link to="/conditions-d-utilisation" target={'_blank'}>les conditions d'utilisation</Link>.
-                    </label>
                 </div>
                 <div className='col-12 text-right'>
                     <button disabled={props.isDisabled ?? false} type='button' 

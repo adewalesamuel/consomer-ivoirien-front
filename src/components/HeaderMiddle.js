@@ -13,15 +13,15 @@ export function HeaderMiddle(props) {
                             <ul className="menu biolife-menu clone-main-menu clone-primary-menu" id="primary-menu" data-menuname="main menu">
                                 <li className="menu-item"><Link to="/">Accueil</Link></li>
                                 <li className="menu-item">
-                                    <a href="#" className="menu-name" data-title="Product">Articles</a>
+                                    <Link to="/articles" className="menu-name" data-title="Product">Articles</Link>
                                 </li>
                                 <li className="menu-item">
-                                    <a href="#" className="menu-name" data-title="Pages">Qui sommes nous</a>
+                                    <Link to="/qui-sommes-nous" className="menu-name" data-title="Pages">Qui sommes nous</Link>
                                 </li>
                                 <li className="menu-item">
-                                    <a href="#" className="menu-name" data-title="Blog">Blog</a>
+                                    <Link to="/blog" className="menu-name" data-title="Blog">Blog</Link>
                                 </li>
-                                <li className="menu-item"><a href="contact.html">Contact</a></li>
+                                <li className="menu-item"><Link to="/contact">Contact</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -94,11 +94,11 @@ export function HeaderMiddle(props) {
                                 </div>
                             </div>
                             <div className="mobile-menu-toggle">
-                                <a className="btn-toggle" data-object="open-mobile-menu" href="#">
+                                <button className="btn-toggle" data-object="open-mobile-menu" href="#">
                                     <span></span>
                                     <span></span>
                                     <span></span>
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>

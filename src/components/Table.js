@@ -53,7 +53,7 @@ export function Table(props) {
                 return (
                     <button key={Math.random()} data-index={dataIndex} data-id={data.id} className="ml-1 btn btn-light" 
                     onClick={(event, item) => props.handleEditClick(event, data) ?? null} >
-                        <i className="dripicons-document-edit text-primary">edit</i>
+                        <i className="dripicons-document-edit text-primary">modifier</i>
                     </button>
                 );
             if (item === "info")
@@ -66,7 +66,7 @@ export function Table(props) {
                 return (
                 <button key={Math.random()} data-index={dataIndex} data-id={data.id} className="ml-1 btn btn-light" 
                 onClick={(event, item) => props.handleDeleteClick(event, data) ?? null}>
-                    <i className="dripicons-trash text-danger">delete</i>
+                    <i className="dripicons-trash text-danger">supprimer</i>
                 </button>);
             return null;
         });

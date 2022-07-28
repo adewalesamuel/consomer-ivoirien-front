@@ -1,27 +1,31 @@
-import {Route, Routes} from 'react-router-dom';
+import {Route, Routes, useLocation} from 'react-router-dom';
 import { useEffect, useMemo, useState } from "react";
 
 import { Services } from '../../services';
 
 import { Components } from "..";
 import { Views } from '../../views';
+import { Utils } from '../../utils';
 
 export function MainLayout(props) {
     const abortController = useMemo(() => new AbortController(), []);
     
-    const [categories, setCategories] = useState([])
+    const [categories, setCategories] = useState([]);
+    const { pathname } = useLocation();
 
-    
-    useEffect(() => {        
+    useEffect(() => { 
+        if (!pathname.startsWith('/mon-compte')) window.scrollTo(0, 0);
+
+        Utils.DomManager.hideElement('mobile-menu');
         Services.HomeService.getAll(abortController.signal)
-        .then(response => setCategories(response.categories))
-    }, [abortController]);
+        .then(response => setCategories(response.categories));
+    }, [abortController, pathname]);
 
     return (
         <>
             <Components.Header />
-            <div className='container'>
-                <div className='row'>
+            <div className='container' id="top-section">
+                <div className='row' >
                     <Components.SearchBar />
                     <Components.Menu />
                     <Components.NavBar categories={categories}/>
@@ -31,6 +35,9 @@ export function MainLayout(props) {
                 <div id="main-content" className="main-content">
                     <Routes>
                         <Route exact path='' element={<Views.AccueilView categories={categories}/>} />
+                        <Route exact path='contact' element={<Views.ContactView />} />
+                        <Route exact path='conditions-d-utilisation' element={<Views.ConditionsView />} />
+                        <Route exact path='qui-sommes-nous' element={<Views.QuiSommesNous />} />
                         <Route exact path='produits/:id' element={<Views.ProduitDetailsView />} />
                         <Route exact path='authentification' element={<Views.AuthentificationView />} />
                         <Route path='mon-compte/*' element={<Views.MonCompteView categories={categories}/>} />
@@ -38,7 +45,7 @@ export function MainLayout(props) {
                     </Routes>
                 </div>
             </div>
-            <Components.Footer />
+            <Components.Footer categories={categories}/>
         </>
     )
 }

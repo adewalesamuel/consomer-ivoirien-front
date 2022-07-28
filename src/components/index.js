@@ -7,6 +7,8 @@ import { NotificationForm } from './forms/NotificationForm';
 import { PubliciteForm } from './forms/PubliciteForm';
 import { SouscriptionForm } from './forms/SouscriptionForm';
 import { SouscriptionUtilisateurForm } from './forms/SouscriptionUtilisateurForm';
+import { ProfileForm } from './forms/ProfileForm';
+import { ContactForm } from './forms/ContactForm';
 
 import { Logo } from './Logo';
 import { Preloader } from './Preloader';
@@ -49,6 +51,7 @@ export const Components = {
 	PubliciteForm,
 	SouscriptionForm,
 	SouscriptionUtilisateurForm,
+	ProfileForm,
 	Header,
 	HeaderTop,
 	Footer,
@@ -74,5 +77,6 @@ export const Components = {
 	CategorieSidebar,
 	Modal,
 	PaiementCommande,
-	Logo
+	Logo,
+	ContactForm
 }

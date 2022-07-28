@@ -25,23 +25,23 @@ export function AjouterProduitView(props) {
           .catch(err => {
             setIsDisabled(false);
             
-           err.messages.then(message => {
+            err.messages.then(message => {
 
-            if (err.status === 404) {
-              alert("Veuillez souscrire à un pack pour ajouter un produit !");
-              navigate('/mon-compte/souscriptions');
+              if (err.status === 404) {
+                alert("Veuillez souscrire à un pack pour ajouter un produit !");
+                navigate('/mon-compte/souscriptions');
 
-              return;
-            }
-            
-            if (err.status === 500) {
-              alert(message); 
-              navigate('/mon-compte/souscriptions');
+                return;
+              }
+              
+              if (err.status === 500) {
+                alert(message); 
+                navigate('/mon-compte/souscriptions');
 
-              return;
-            }
-
-            alert(message);
+                return;
+              }
+              
+              alert(message);
           })
           });
     }

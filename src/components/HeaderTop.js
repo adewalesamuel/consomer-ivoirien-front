@@ -7,15 +7,15 @@ export function HeaderTop(props) {
             <div className="container">
                 <div className="top-bar left">
                     <ul className="horizontal-menu">
-                        <li><a href="#"><i className="fa fa-envelope" aria-hidden="true"></i>info@jeconsommeivoirien.com</a></li>
+                        <li><a href="#"><i className="fa fa-envelope" aria-hidden="true"></i>info@jeconsommivoirien.com</a></li>
                         <li><a href="#">Le meilleur site de E-commerce</a></li>
                     </ul>
                 </div>
                 <div className="top-bar right">
                     <ul className="social-list">
-                        <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i className="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://facebook.com/Je-Consomme-Ivoirien-182192885906130/"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://twitter.com/jeconsommivo"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
                     </ul>
                     <ul className="horizontal-menu">
                         <li>

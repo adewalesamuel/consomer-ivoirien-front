@@ -23,7 +23,7 @@ export function AccueilView(props) {
                     return (
                         <div className="row" key={index}>
                             <div className="col-lg-12 bold-style biolife-title-box__bold-style 
-                            mobile-tiny sm-margin-top-80px">
+                            mobile-tiny sm-margin-top-80px categorie-section">
                                 <h3 className="title" style={{color: 'orange'}}>{categorie.nom}</h3>
                             </div>
                             <div className="col-lg-4 col-sm-4">
@@ -40,7 +40,7 @@ export function AccueilView(props) {
                     ) 
                 })}
                 <Components.ServiceBox />
-                <Components.BrandList />
+                {/* <Components.BrandList /> */}
             </div>
         </>
     )

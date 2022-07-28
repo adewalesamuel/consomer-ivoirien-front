@@ -29,8 +29,8 @@ export function MonCompteView(props) {
                         handleClick={e => navigate('produits')}/>
                         </div>
                     <div className="col-xs-6 col-md-3">
-                        <Components.AccountTab title='Votre profil de vendeur' icon='fa-user' 
-                        handleClick={e => console.log("clicked tabs")}/>
+                        <Components.AccountTab title='Votre profile' icon='fa-user' 
+                        handleClick={e => navigate('profile')}/>
                     </div>
                     <div className="col-xs-6 col-md-3">
                         <Components.AccountTab title='Historique de commission' icon='fa-list' 
@@ -41,9 +41,11 @@ export function MonCompteView(props) {
                     <Routes>
                         <Route exact path='ajouter-produit' element={<Views.AjouterProduitView 
                         categories={props.categories}/>} />
+                        <Route exact path='profile' element={<Views.EditProfileView />} />
                         <Route exact path='produits/:id/modifier' element={<Views.ProduitUtilisateurEditView 
                          categories={props.categories}/>} />
                         <Route exact path='produits' element={<Views.ProduitUtilisateurListView />} />
+                        <Route exact path='souscription/status' element={<Views.SouscriptionStatus />} />
                         <Route exact path='souscriptions/*' element={<Views.SouscriptionListView />} />
                     </Routes>
                 </div>
